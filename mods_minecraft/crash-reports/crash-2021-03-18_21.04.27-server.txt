@@ -1,0 +1,148 @@
+---- Minecraft Crash Report ----
+
+WARNING: coremods are present:
+  llibrary (llibrary-core-1.0.11-1.12.2.jar)
+  ForgelinPlugin (Forgelin-1.8.4.jar)
+  weaponlib (mw_2.0-0.4.4.6_mc1.12.2.jar)
+  iceandfire (iceandfire-1.9.1-1.12.2.jar)
+Contact their authors BEFORE contacting forge
+
+// This is a token for 1 free hug. Redeem at your nearest Mojangsta: [~~HUG~~]
+
+Time: 2021/3/18 下午 9:04
+Description: Ticking entity
+
+java.lang.NullPointerException: Ticking entity
+	at net.minecraft.util.ClassInheritanceMultiMap.func_181157_b(ClassInheritanceMultiMap.java:52)
+	at net.minecraft.util.ClassInheritanceMultiMap$1.iterator(ClassInheritanceMultiMap.java:126)
+	at net.minecraft.world.chunk.Chunk.func_177430_a(Chunk.java:934)
+	at net.minecraft.world.World.func_175647_a(World.java:3085)
+	at net.minecraft.entity.ai.EntityAINearestAttackableTarget.func_75250_a(SourceFile:91)
+	at net.minecraft.entity.ai.EntityAITargetNonTamed.func_75250_a(SourceFile:17)
+	at net.minecraft.entity.ai.EntityAITasks.func_75774_a(SourceFile:94)
+	at net.minecraft.entity.EntityLiving.func_70626_be(EntityLiving.java:760)
+	at net.minecraft.entity.EntityLivingBase.func_70636_d(EntityLivingBase.java:2359)
+	at net.minecraft.entity.EntityLiving.func_70636_d(EntityLiving.java:577)
+	at net.minecraft.entity.EntityAgeable.func_70636_d(EntityAgeable.java:178)
+	at net.minecraft.entity.passive.EntityAnimal.func_70636_d(SourceFile:43)
+	at net.minecraft.entity.passive.EntityWolf.func_70636_d(EntityWolf.java:212)
+	at net.minecraft.entity.EntityLivingBase.func_70071_h_(EntityLivingBase.java:2179)
+	at net.minecraft.entity.EntityLiving.func_70071_h_(EntityLiving.java:295)
+	at net.minecraft.entity.passive.EntityWolf.func_70071_h_(EntityWolf.java:230)
+	at net.minecraft.world.World.func_72866_a(World.java:1996)
+	at net.minecraft.world.WorldServer.func_72866_a(WorldServer.java:832)
+	at net.minecraft.world.World.func_72870_g(World.java:1958)
+	at net.minecraft.world.World.func_72939_s(World.java:1762)
+	at net.minecraft.world.WorldServer.func_72939_s(WorldServer.java:613)
+	at net.minecraft.server.MinecraftServer.func_71190_q(MinecraftServer.java:767)
+	at net.minecraft.server.dedicated.DedicatedServer.func_71190_q(DedicatedServer.java:397)
+	at net.minecraft.server.MinecraftServer.func_71217_p(MinecraftServer.java:668)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:526)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at net.minecraft.util.ClassInheritanceMultiMap.func_181157_b(ClassInheritanceMultiMap.java:52)
+	at net.minecraft.util.ClassInheritanceMultiMap$1.iterator(ClassInheritanceMultiMap.java:126)
+	at net.minecraft.world.chunk.Chunk.func_177430_a(Chunk.java:934)
+	at net.minecraft.world.World.func_175647_a(World.java:3085)
+	at net.minecraft.entity.ai.EntityAINearestAttackableTarget.func_75250_a(SourceFile:91)
+	at net.minecraft.entity.ai.EntityAITargetNonTamed.func_75250_a(SourceFile:17)
+	at net.minecraft.entity.ai.EntityAITasks.func_75774_a(SourceFile:94)
+	at net.minecraft.entity.EntityLiving.func_70626_be(EntityLiving.java:760)
+	at net.minecraft.entity.EntityLivingBase.func_70636_d(EntityLivingBase.java:2359)
+	at net.minecraft.entity.EntityLiving.func_70636_d(EntityLiving.java:577)
+	at net.minecraft.entity.EntityAgeable.func_70636_d(EntityAgeable.java:178)
+	at net.minecraft.entity.passive.EntityAnimal.func_70636_d(SourceFile:43)
+	at net.minecraft.entity.passive.EntityWolf.func_70636_d(EntityWolf.java:212)
+	at net.minecraft.entity.EntityLivingBase.func_70071_h_(EntityLivingBase.java:2179)
+	at net.minecraft.entity.EntityLiving.func_70071_h_(EntityLiving.java:295)
+	at net.minecraft.entity.passive.EntityWolf.func_70071_h_(EntityWolf.java:230)
+	at net.minecraft.world.World.func_72866_a(World.java:1996)
+	at net.minecraft.world.WorldServer.func_72866_a(WorldServer.java:832)
+	at net.minecraft.world.World.func_72870_g(World.java:1958)
+
+-- Entity being ticked --
+Details:
+	Entity Type: minecraft:wolf (net.minecraft.entity.passive.EntityWolf)
+	Entity ID: 90
+	Entity Name: Wolf
+	Entity's Exact location: 335.50, 67.00, 348.50
+	Entity's Block location: World: (335,67,348), Chunk: (at 15,4,12 in 20,21; contains blocks 320,0,336 to 335,255,351), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Entity's Momentum: 0.00, -0.08, 0.00
+	Entity's Passengers: []
+	Entity's Vehicle: ~~ERROR~~ NullPointerException: null
+Stacktrace:
+	at net.minecraft.world.World.func_72939_s(World.java:1762)
+	at net.minecraft.world.WorldServer.func_72939_s(WorldServer.java:613)
+
+-- Affected level --
+Details:
+	Level name: world
+	All players: 3 total; [EntityPlayerMP['Q_______'/1954, l='world', x=198.98, y=64.00, z=260.77], EntityPlayerMP['White_shrimp'/2320, l='world', x=246.70, y=57.00, z=283.70], EntityPlayerMP['Torikororu'/3023, l='world', x=201.98, y=64.00, z=259.63]]
+	Chunk stats: ServerChunkCache: 522 Drop: 0
+	Level seed: -912112375284046355
+	Level generator: ID 00 - default, ver 1. Features enabled: true
+	Level generator options: 
+	Level spawn location: World: (204,64,240), Chunk: (at 12,4,0 in 12,15; contains blocks 192,0,240 to 207,255,255), Region: (0,0; contains chunks 0,0 to 31,31, blocks 0,0,0 to 511,255,511)
+	Level time: 9722 game time, 9722 day time
+	Level dimension: 0
+	Level storage version: 0x04ABD - Anvil
+	Level weather: Rain time: 138596 (now: false), thunder time: 159666 (now: false)
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.func_71190_q(MinecraftServer.java:767)
+	at net.minecraft.server.dedicated.DedicatedServer.func_71190_q(DedicatedServer.java:397)
+	at net.minecraft.server.MinecraftServer.func_71217_p(MinecraftServer.java:668)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:526)
+	at java.lang.Thread.run(Thread.java:748)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Linux (amd64) version 5.8.0-45-generic
+	Java Version: 1.8.0_282, Private Build
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Private Build
+	Memory: 4114751352 bytes (3924 MB) / 5872549888 bytes (5600 MB) up to 9544663040 bytes (9102 MB)
+	JVM Flags: 2 total; -Xmx10G -Xms2G
+	IntCache: cache: 0, tcache: 0, allocated: 12, tallocated: 94
+	FML: MCP 9.42 Powered by Forge 14.23.5.2854 15 mods loaded, 15 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State  | ID             | Version      | Source                                        | Signature                                |
+	|:------ |:-------------- |:------------ |:--------------------------------------------- |:---------------------------------------- |
+	| LCHIJA | minecraft      | 1.12.2       | minecraft.jar                                 | None                                     |
+	| LCHIJA | mcp            | 9.42         | minecraft.jar                                 | None                                     |
+	| LCHIJA | FML            | 8.0.99.99    | forge-1.12.2-14.23.5.2854.jar                 | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| LCHIJA | forge          | 14.23.5.2854 | forge-1.12.2-14.23.5.2854.jar                 | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| LCHIJA | baubles        | 1.5.2        | Baubles-1.12-1.5.2.jar                        | None                                     |
+	| LCHIJA | botania        | r1.10-347    | Botania+r1.10-347.jar                         | None                                     |
+	| LCHIJA | codechickenlib | 3.2.3.358    | CodeChickenLib-1.12.2-3.2.3.358-universal.jar | f1850c39b2516232a2108a7bd84d1cb5df93b261 |
+	| LCHIJA | ebwizardry     | 4.3.4        | ElectroblobsWizardry-4.3.4-MC1.12.2.jar       | None                                     |
+	| LCHIJA | enderstorage   | 2.4.6.137    | EnderStorage-1.12.2-2.4.6.137-universal.jar   | f1850c39b2516232a2108a7bd84d1cb5df93b261 |
+	| LCHIJA | forgelin       | 1.8.4        | Forgelin-1.8.4.jar                            | None                                     |
+	| LCHIJA | llibrary       | 1.7.20       | llibrary-1.7.20-1.12.2.jar                    | b9f30a813bee3b9dd5652c460310cfcd54f6b7ec |
+	| LCHIJA | iceandfire     | 1.9.1        | iceandfire-1.9.1-1.12.2.jar                   | None                                     |
+	| LCHIJA | journeymap     | 1.12.2-5.7.1 | journeymap-1.12.2-5.7.1.jar                   | None                                     |
+	| LCHIJA | moremobss      | 1.0.0        | More+Mobs+1.12.2.jar                          | None                                     |
+	| LCHIJA | mw             | 0.4.4.6      | mw_2.0-0.4.4.6_mc1.12.2.jar                   | None                                     |
+
+	Loaded coremods (and transformers): 
+llibrary (llibrary-core-1.0.11-1.12.2.jar)
+  net.ilexiconn.llibrary.server.core.plugin.LLibraryTransformer
+  net.ilexiconn.llibrary.server.core.patcher.LLibraryRuntimePatcher
+ForgelinPlugin (Forgelin-1.8.4.jar)
+  
+weaponlib (mw_2.0-0.4.4.6_mc1.12.2.jar)
+  com.vicmatskiv.weaponlib.core.WeaponlibClassTransformer
+iceandfire (iceandfire-1.9.1-1.12.2.jar)
+  com.github.alexthe666.iceandfire.patcher.IceAndFireRuntimePatcher
+	Profiler Position: N/A (disabled)
+	Player Count: 3 / 100; [EntityPlayerMP['Q_______'/1954, l='world', x=198.98, y=64.00, z=260.77], EntityPlayerMP['White_shrimp'/2320, l='world', x=246.70, y=57.00, z=283.70], EntityPlayerMP['Torikororu'/3023, l='world', x=201.98, y=64.00, z=259.63]]
+	Is Modded: Definitely; Server brand changed to 'fml,forge'
+	Type: Dedicated Server (map_server.txt)

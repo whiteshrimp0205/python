@@ -1,0 +1,173 @@
+---- Minecraft Crash Report ----
+
+WARNING: coremods are present:
+  llibrary (llibrary-core-1.0.11-1.12.2.jar)
+  Inventory Tweaks Coremod (InventoryTweaks-1.63.jar)
+  ForgelinPlugin (Forgelin-1.8.4.jar)
+  iceandfire (iceandfire-1.9.1-1.12.2.jar)
+Contact their authors BEFORE contacting forge
+
+// Hey, that tickles! Hehehe!
+
+Time: 2021/3/26 下午 2:05
+Description: Ticking entity
+
+java.lang.ArrayIndexOutOfBoundsException: -1434547224
+	at net.minecraft.world.chunk.Chunk.func_177414_a(Chunk.java:896)
+	at net.minecraft.world.World.func_175674_a(World.java:3028)
+	at net.minecraft.entity.EntityLivingBase.func_85033_bc(EntityLivingBase.java:2439)
+	at net.minecraft.entity.EntityLivingBase.func_70636_d(EntityLivingBase.java:2396)
+	at net.minecraft.entity.EntityLiving.func_70636_d(EntityLiving.java:577)
+	at net.minecraft.entity.monster.EntityMob.func_70636_d(EntityMob.java:45)
+	at net.minecraft.entity.monster.EntityZombie.func_70636_d(EntityZombie.java:223)
+	at net.minecraft.entity.EntityLivingBase.func_70071_h_(EntityLivingBase.java:2179)
+	at net.minecraft.entity.EntityLiving.func_70071_h_(EntityLiving.java:295)
+	at net.minecraft.entity.monster.EntityMob.func_70071_h_(EntityMob.java:50)
+	at net.minecraft.world.World.func_72866_a(World.java:1996)
+	at net.minecraft.world.WorldServer.func_72866_a(WorldServer.java:832)
+	at net.minecraft.world.World.func_72870_g(World.java:1958)
+	at net.minecraft.world.World.func_72939_s(World.java:1762)
+	at net.minecraft.world.WorldServer.func_72939_s(WorldServer.java:613)
+	at net.minecraft.server.MinecraftServer.func_71190_q(MinecraftServer.java:767)
+	at net.minecraft.server.dedicated.DedicatedServer.func_71190_q(DedicatedServer.java:397)
+	at net.minecraft.server.MinecraftServer.func_71217_p(MinecraftServer.java:668)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:526)
+	at java.lang.Thread.run(Thread.java:748)
+
+
+A detailed walkthrough of the error, its code path and all known details is as follows:
+---------------------------------------------------------------------------------------
+
+-- Head --
+Thread: Server thread
+Stacktrace:
+	at net.minecraft.world.chunk.Chunk.func_177414_a(Chunk.java:896)
+	at net.minecraft.world.World.func_175674_a(World.java:3028)
+	at net.minecraft.entity.EntityLivingBase.func_85033_bc(EntityLivingBase.java:2439)
+	at net.minecraft.entity.EntityLivingBase.func_70636_d(EntityLivingBase.java:2396)
+	at net.minecraft.entity.EntityLiving.func_70636_d(EntityLiving.java:577)
+	at net.minecraft.entity.monster.EntityMob.func_70636_d(EntityMob.java:45)
+	at net.minecraft.entity.monster.EntityZombie.func_70636_d(EntityZombie.java:223)
+	at net.minecraft.entity.EntityLivingBase.func_70071_h_(EntityLivingBase.java:2179)
+	at net.minecraft.entity.EntityLiving.func_70071_h_(EntityLiving.java:295)
+	at net.minecraft.entity.monster.EntityMob.func_70071_h_(EntityMob.java:50)
+	at net.minecraft.world.World.func_72866_a(World.java:1996)
+	at net.minecraft.world.WorldServer.func_72866_a(WorldServer.java:832)
+	at net.minecraft.world.World.func_72870_g(World.java:1958)
+
+-- Entity being ticked --
+Details:
+	Entity Type: minecraft:zombie (net.minecraft.entity.monster.EntityZombie)
+	Entity ID: 509272
+	Entity Name: Zombie
+	Entity's Exact location: 35.50, 44.00, -96.50
+	Entity's Block location: World: (35,44,-97), Chunk: (at 3,2,15 in 2,-7; contains blocks 32,0,-112 to 47,255,-97), Region: (0,-1; contains chunks 0,-32 to 31,-1, blocks 0,0,-512 to 511,255,-1)
+	Entity's Momentum: 0.00, -0.08, 0.00
+	Entity's Passengers: []
+	Entity's Vehicle: ~~ERROR~~ NullPointerException: null
+Stacktrace:
+	at net.minecraft.world.World.func_72939_s(World.java:1762)
+	at net.minecraft.world.WorldServer.func_72939_s(WorldServer.java:613)
+
+-- Affected level --
+Details:
+	Level name: world
+	All players: 0 total; []
+	Chunk stats: ServerChunkCache: 1106 Drop: 0
+	Level seed: -3579881091290846256
+	Level generator: ID 00 - default, ver 1. Features enabled: true
+	Level generator options: 
+	Level spawn location: World: (115,71,-20), Chunk: (at 3,4,12 in 7,-2; contains blocks 112,0,-32 to 127,255,-17), Region: (0,-1; contains chunks 0,-32 to 31,-1, blocks 0,0,-512 to 511,255,-1)
+	Level time: 8000306 game time, 8000306 day time
+	Level dimension: 0
+	Level storage version: 0x04ABD - Anvil
+	Level weather: Rain time: 33280 (now: false), thunder time: 163367 (now: false)
+	Level game mode: Game mode: survival (ID 0). Hardcore: false. Cheats: false
+Stacktrace:
+	at net.minecraft.server.MinecraftServer.func_71190_q(MinecraftServer.java:767)
+	at net.minecraft.server.dedicated.DedicatedServer.func_71190_q(DedicatedServer.java:397)
+	at net.minecraft.server.MinecraftServer.func_71217_p(MinecraftServer.java:668)
+	at net.minecraft.server.MinecraftServer.run(MinecraftServer.java:526)
+	at java.lang.Thread.run(Thread.java:748)
+
+-- System Details --
+Details:
+	Minecraft Version: 1.12.2
+	Operating System: Linux (amd64) version 5.8.0-45-generic
+	Java Version: 1.8.0_282, Private Build
+	Java VM Version: OpenJDK 64-Bit Server VM (mixed mode), Private Build
+	Memory: 5102428352 bytes (4866 MB) / 8453619712 bytes (8062 MB) up to 9544663040 bytes (9102 MB)
+	JVM Flags: 2 total; -Xmx10G -Xms2G
+	IntCache: cache: 0, tcache: 0, allocated: 14, tallocated: 94
+	FML: MCP 9.42 Powered by Forge 14.23.5.2854 35 mods loaded, 35 mods active
+	States: 'U' = Unloaded 'L' = Loaded 'C' = Constructed 'H' = Pre-initialized 'I' = Initialized 'J' = Post-initialized 'A' = Available 'D' = Disabled 'E' = Errored
+
+	| State  | ID                  | Version                  | Source                                        | Signature                                |
+	|:------ |:------------------- |:------------------------ |:--------------------------------------------- |:---------------------------------------- |
+	| LCHIJA | minecraft           | 1.12.2                   | minecraft.jar                                 | None                                     |
+	| LCHIJA | mcp                 | 9.42                     | minecraft.jar                                 | None                                     |
+	| LCHIJA | FML                 | 8.0.99.99                | forge-1.12.2-14.23.5.2854.jar                 | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| LCHIJA | forge               | 14.23.5.2854             | forge-1.12.2-14.23.5.2854.jar                 | e3c3d50c7c986df74c645c0ac54639741c90a557 |
+	| LCHIJA | baubles             | 1.5.2                    | Baubles-1.12-1.5.2.jar                        | None                                     |
+	| LCHIJA | bonsaitrees         | 1.1.4                    | bonsaitrees-1.1.4-b170.jar                    | None                                     |
+	| LCHIJA | botania             | r1.10-347                | Botania+r1.10-347.jar                         | None                                     |
+	| LCHIJA | buildcraftlib       | 7.99.24.8                | buildcraft-all-7.99.24.8.jar                  | None                                     |
+	| LCHIJA | buildcraftcore      | 7.99.24.8                | buildcraft-all-7.99.24.8.jar                  | None                                     |
+	| LCHIJA | buildcraftbuilders  | 7.99.24.8                | buildcraft-all-7.99.24.8.jar                  | None                                     |
+	| LCHIJA | buildcrafttransport | 7.99.24.8                | buildcraft-all-7.99.24.8.jar                  | None                                     |
+	| LCHIJA | buildcraftsilicon   | 7.99.24.8                | buildcraft-all-7.99.24.8.jar                  | None                                     |
+	| LCHIJA | ic2                 | 2.8.221-ex112            | industrialcraft-2-2.8.221-ex112.jar           | de041f9f6187debbc77034a344134053277aa3b0 |
+	| LCHIJA | buildcraftcompat    | 7.99.24.8                | buildcraft-all-7.99.24.8.jar                  | None                                     |
+	| LCHIJA | buildcraftenergy    | 7.99.24.8                | buildcraft-all-7.99.24.8.jar                  | None                                     |
+	| LCHIJA | buildcraftfactory   | 7.99.24.8                | buildcraft-all-7.99.24.8.jar                  | None                                     |
+	| LCHIJA | buildcraftrobotics  | 7.99.24.8                | buildcraft-all-7.99.24.8.jar                  | None                                     |
+	| LCHIJA | codechickenlib      | 3.2.3.358                | CodeChickenLib-1.12.2-3.2.3.358-universal.jar | f1850c39b2516232a2108a7bd84d1cb5df93b261 |
+	| LCHIJA | ebwizardry          | 4.3.4                    | ElectroblobsWizardry-4.3.4-MC1.12.2.jar       | None                                     |
+	| LCHIJA | enderstorage        | 2.4.6.137                | EnderStorage-1.12.2-2.4.6.137-universal.jar   | f1850c39b2516232a2108a7bd84d1cb5df93b261 |
+	| LCHIJA | forgelin            | 1.8.4                    | Forgelin-1.8.4.jar                            | None                                     |
+	| LCHIJA | waila               | 1.8.26                   | Hwyla-1.8.26-B41_1.12.2.jar                   | None                                     |
+	| LCHIJA | llibrary            | 1.7.20                   | llibrary-1.7.20-1.12.2.jar                    | b9f30a813bee3b9dd5652c460310cfcd54f6b7ec |
+	| LCHIJA | iceandfire          | 1.9.1                    | iceandfire-1.9.1-1.12.2.jar                   | None                                     |
+	| LCHIJA | infernalmobs        | 1.7.6                    | InfernalMobs-1.12.2.jar                       | None                                     |
+	| LCHIJA | inventorytweaks     | 1.63+release.109.220f184 | InventoryTweaks-1.63.jar                      | 55d2cd4f5f0961410bf7b91ef6c6bf00a766dcbe |
+	| LCHIJA | ironchest           | 1.12.2-7.0.67.844        | ironchest-1.12.2-7.0.72.847.jar               | None                                     |
+	| LCHIJA | journeymap          | 1.12.2-5.7.1             | journeymap-1.12.2-5.7.1.jar                   | None                                     |
+	| LCHIJA | mantle              | 1.12-1.3.3.55            | Mantle-1.12-1.3.3.55.jar                      | None                                     |
+	| LCHIJA | moremobss           | 1.0.0                    | More+Mobs+1.12.2.jar                          | None                                     |
+	| LCHIJA | mowziesmobs         | 1.5.8                    | mowziesmobs-1.5.8.jar                         | None                                     |
+	| LCHIJA | mutantbeasts        | 1.12.2-1.0.2             | MutantBeasts-1.12.2-1.0.2.jar                 | None                                     |
+	| LCHIJA | twilightforest      | 3.9.984                  | twilightforest-1.12.2-3.9.984-universal.jar   | None                                     |
+	| LCHIJA | tconstruct          | 1.12.2-2.13.0.183        | TConstruct-1.12.2-2.13.0.183.jar              | None                                     |
+	| LCHIJA | tinkertoolleveling  | 1.12.2-1.1.0.DEV.b23e769 | TinkerToolLeveling-1.12.2-1.1.0.jar           | None                                     |
+
+	Loaded coremods (and transformers): 
+llibrary (llibrary-core-1.0.11-1.12.2.jar)
+  net.ilexiconn.llibrary.server.core.plugin.LLibraryTransformer
+  net.ilexiconn.llibrary.server.core.patcher.LLibraryRuntimePatcher
+Inventory Tweaks Coremod (InventoryTweaks-1.63.jar)
+  invtweaks.forge.asm.ContainerTransformer
+ForgelinPlugin (Forgelin-1.8.4.jar)
+  
+iceandfire (iceandfire-1.9.1-1.12.2.jar)
+  com.github.alexthe666.iceandfire.patcher.IceAndFireRuntimePatcher
+	Pulsar/tconstruct loaded Pulses: 
+		- TinkerCommons (Enabled/Forced)
+		- TinkerWorld (Enabled/Not Forced)
+		- TinkerTools (Enabled/Not Forced)
+		- TinkerHarvestTools (Enabled/Forced)
+		- TinkerMeleeWeapons (Enabled/Forced)
+		- TinkerRangedWeapons (Enabled/Forced)
+		- TinkerModifiers (Enabled/Forced)
+		- TinkerSmeltery (Enabled/Not Forced)
+		- TinkerGadgets (Enabled/Not Forced)
+		- TinkerOredict (Enabled/Forced)
+		- TinkerIntegration (Enabled/Forced)
+		- TinkerFluids (Enabled/Forced)
+		- TinkerMaterials (Enabled/Forced)
+		- TinkerModelRegister (Enabled/Forced)
+		- wailaIntegration (Enabled/Not Forced)
+
+	Profiler Position: N/A (disabled)
+	Player Count: 0 / 100; []
+	Is Modded: Definitely; Server brand changed to 'fml,forge'
+	Type: Dedicated Server (map_server.txt)
